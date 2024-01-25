@@ -5,7 +5,7 @@ import { Card, CardBody, CardSubtitle, CardTitle, CardText,
          Container, Row, Col, Form, FormGroup, Input, Button,
          Label } from 'reactstrap';
 
-import { loginUser } from './redux_components/actions/authActions';
+import { loginUser } from './utils/actions/authActions';
 
 import './style.css';
 
@@ -22,7 +22,7 @@ const Login = () => {
      * Handle changes to the username input.
      * @param e
      */
-    const handleChange = (e) => {
+    const handleChange = e => {
         setUserData({
             ...userData,
             [e.target.name]: e.target.value
@@ -33,7 +33,7 @@ const Login = () => {
      * Handle the login form data.
      * @param e
      */
-    const handleSubmit = (e) => {
+    const handleSubmit = e => {
         e.preventDefault();
         dispatch(loginUser(userData));
     };

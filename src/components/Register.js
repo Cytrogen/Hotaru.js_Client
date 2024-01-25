@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardBody, CardTitle, CardText, Container,
          Row, Col, Form, FormGroup, Input, Button, Label } from 'reactstrap';
 
-import { registerUser } from './redux_components/actions/authActions';
+import { registerUser } from './utils/actions/authActions';
 
 import './style.css'
 
