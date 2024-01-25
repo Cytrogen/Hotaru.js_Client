@@ -9,8 +9,15 @@ export default socket;
  * @returns {(function(*): void)|*}
  */
 export const registerUser = (userData, navigate) => dispatch => {
+    // Emit the register event to the server with the user data.
     socket.emit('register', userData);
-    navigate('/login');
+
+    // Listen for the newRegisteredUser event from the server.
+    socket.on('newRegisteredUser', (data) => {
+        // If the registration was successful, redirect the user to the login page.
+        if (data.status === 200)
+            navigate('/login');
+    });
 };
 
 /**
@@ -19,13 +26,16 @@ export const registerUser = (userData, navigate) => dispatch => {
  * @returns {(function(*): void)|*}
  */
 export const loginUser = userData => dispatch => {
+    // Emit the login event to the server with the user data.
     socket.emit('login', userData);
 
-    socket.on('login', (data) => {
+    socket.on('loggedInUser', (data) => {
+        // console.log('data: ', data);
         if (data.status === 200) {
             const { token } = data;
             localStorage.setItem('jwtToken', token);
             dispatch(setCurrentUser(token));
+            // console.log('token: ', token);
         }
     });
 };
