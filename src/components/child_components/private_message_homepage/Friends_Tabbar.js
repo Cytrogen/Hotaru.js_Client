@@ -1,0 +1,69 @@
+import { useState } from "react";
+
+import { Icon } from "@iconify/react";
+
+const FriendsTabbar = () => {
+    const [hoverStates, setHoverStates] = useState({});
+
+    const updateHoverState = (item, isHovered) => {
+        setHoverStates(prev => ({ ...prev, [item]: isHovered }));
+    }
+
+    return (
+        <>
+            <div className="d-flex flex-row align-items-stretch align-items-center text-center" style={{ minHeight: '32px' }}>
+                <div className="d-flex flex-row align-items-center">
+                    <Icon icon="ls:friend" className="mx-2" style={{ fontSize: '24px', color: 'rgba(128, 132, 142)' }} />
+                    <span className="fw-bold text-white mx-2">Friends</span>
+                    <span className="mx-2" style={{ width: '1px', height: '24px', backgroundColor: 'rgba(63, 65, 71)' }}/>
+                </div>
+                <div className="d-flex flex-row align-items-center" style={{ color: 'rgba(128, 132, 142)' }}>
+                    <span
+                        className="px-2 py-1 mx-2 rounded-2"
+                        onMouseEnter={ () => updateHoverState('online', true) }
+                        onMouseLeave={ () => updateHoverState('online', false) }
+                        style={{ backgroundColor: hoverStates['online'] ? 'rgba(57, 60, 65)' : 'rgba(49, 51, 56)' }}
+                    >
+                        Online
+                    </span>
+                    <span
+                        className="px-2 py-1 mx-2 rounded-2"
+                        onMouseEnter={ () => updateHoverState('all', true) }
+                        onMouseLeave={ () => updateHoverState('all', false) }
+                        style={{ backgroundColor: hoverStates['all'] ? 'rgba(57, 60, 65)' : 'rgba(49, 51, 56)' }}
+                    >
+                        All
+                    </span>
+                    <span
+                        className="px-2 py-1 mx-2 rounded-2"
+                        onMouseEnter={ () => updateHoverState('pending', true) }
+                        onMouseLeave={ () => updateHoverState('pending', false) }
+                        style={{ backgroundColor: hoverStates['pending'] ? 'rgba(57, 60, 65)' : 'rgba(49, 51, 56)' }}
+                    >
+                        Pending
+                    </span>
+                    <span
+                        className="px-2 py-1 mx-2 rounded-2"
+                        onMouseEnter={ () => updateHoverState('blocked', true) }
+                        onMouseLeave={ () => updateHoverState('blocked', false) }
+                        style={{ backgroundColor: hoverStates['blocked'] ? 'rgba(57, 60, 65)' : 'rgba(49, 51, 56)' }}
+                    >
+                        Blocked
+                    </span>
+                    <span className="text-white rounded-2" style={{ padding: '2px 8px', margin: '0px 8px', backgroundColor: 'rgba(36, 128, 70)' }}>Add Friend</span>
+                </div>
+            </div>
+
+            <div className="float-end">
+                <div className="d-flex flex-row align-items-center mt-1">
+                    <Icon icon="mdi:chat-plus" style={{color: 'rgb(181, 186, 193)', fontSize: '24px'}}/>
+                    <span className="mx-3" style={{width: '1px', height: '24px', backgroundColor: 'rgba(63, 65, 71)'}}/>
+                    <Icon icon="material-symbols:inbox" className="me-3" style={{color: 'rgb(181, 186, 193)', fontSize: '24px'}}/>
+                    <Icon icon="ph:question-fill" className="me-2" style={{color: 'rgb(181, 186, 193)', fontSize: '24px'}}/>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default FriendsTabbar;
