@@ -1,7 +1,9 @@
 import { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
+import "../style.css";
 import imgURL from "../static/avatar.png";
 
 const ActiveFriendsList = () => {
@@ -42,10 +44,10 @@ const ActiveFriendsList = () => {
 
                             <div className="d-flex flex-row mt-1 me-3">
                                 <span className="rounded-circle px-2 py-1" style={{ backgroundColor: 'rgba(41, 43, 46)' }}>
-                                    <Icon icon="tabler:message-circle-2-filled" style={{ color: 'rgb(181, 186, 193)', fontSize: '24px' }}/>
+                                    <Icon icon="tabler:message-circle-2-filled" className="tabbar_logo" />
                                 </span>
                                 <span className="rounded-circle px-2 py-1 mx-3" style={{ backgroundColor: 'rgba(41, 43, 46)' }}>
-                                    <Icon icon="icon-park-solid:more-three" style={{ color: 'rgb(181, 186, 193)', fontSize: '24px' }}/>
+                                    <Icon icon="icon-park-solid:more-three" className="tabbar_logo" />
                                 </span>
                             </div>
                         </div>

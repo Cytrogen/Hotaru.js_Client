@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Card, CardBody, CardTitle, CardText, Container, Row, Col, Form, FormGroup, Input, Button, Label } from "reactstrap";
 
-import "./style.css";
+import "./child_components/style.css";
 import { registerUser } from "./utils/actions/authActions";
 
 const Register = () => {

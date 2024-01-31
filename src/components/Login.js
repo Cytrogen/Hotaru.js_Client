@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Card, CardBody, CardSubtitle, CardTitle, CardText, Container, Row, Col, Form, FormGroup, Input, Button, Label } from "reactstrap";
 
-import './style.css';
+import './child_components/style.css';
 import { loginUser } from './utils/actions/authActions';
 
 const Login = () => {
