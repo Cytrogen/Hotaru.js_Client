@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-import ServerSidebar from "./child_components/Server_Sidebar";
+import ServerSidebar from "./Server_Sidebar";
 
 const Home = () => {
     return (

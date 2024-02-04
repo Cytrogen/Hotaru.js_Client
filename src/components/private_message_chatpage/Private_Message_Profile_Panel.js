@@ -2,7 +2,7 @@ import imgURL from '../static/avatar.png';
 
 const PrivateMessageProfilePanel = () => {
     return (
-        <div className="overflow-hidden min-vh-100" style={{ backgroundColor: 'rgba(35, 36, 40)' }}>
+        <div className="overflow-hidden h-100" style={{ backgroundColor: 'rgba(35, 36, 40)' }}>
             <div className="d-flex flex-column mb-5">
                 {/* Profile background color and profile avatar */}
                 <div className="w-auto position-relative" style={{ minHeight: '120px', minWidth: '430px', backgroundColor: 'rgba(196, 255, 0)' }}>
@@ -14,6 +14,7 @@ const PrivateMessageProfilePanel = () => {
                             top: '72px', left: '18px', zIndex: '1',
                             borderStyle: 'solid', borderColor: 'rgba(35, 36, 40)', borderWidth: '6px'
                         }}
+                        alt=""
                     />
                 </div>
                 <span className="w-auto" style={{ minHeight: '28px', flex: '1' }} />

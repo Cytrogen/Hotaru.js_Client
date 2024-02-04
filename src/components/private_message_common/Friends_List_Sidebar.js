@@ -36,8 +36,8 @@ const FriendsListSidebar = () => {
                         >
                             <a style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none' }} href="/channels/@me/dummy">
                                 <div className="m-2">
-                                    <img className="rounded-circle" style={{ width: '32px', height: '32px', marginRight: '12px' }} src={ imgURL } />
-                                    <span>Dummy</span>
+                                    <img className="rounded-circle" style={{ width: '32px', height: '32px', marginRight: '12px' }} src={ imgURL } alt="" />
+                                    <span className="fw-bolder">Dummy</span>
                                 </div>
                             </a>
                         </div>

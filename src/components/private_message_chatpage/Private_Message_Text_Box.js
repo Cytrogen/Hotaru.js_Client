@@ -2,29 +2,16 @@ import { Icon } from "@iconify/react";
 
 const PrivateMessageTextBox = () => {
     return (
-        <form
-            className="position-relative flex-shrink-0 p-0 m-0"
-            style={{paddingLeft: '16px', paddingRight: '16px', marginTop: '-8px'}}
-        >
+        <form className="px-2 m-3">
             <div
-                className="position-relative w-100 p-0 m-0"
-                style={{
-                    marginBottom: '24px',
-                    backgroundColor: 'rgba(56, 58, 64)',
-                    textIndent: '0',
-                    borderRadius: '8px'
-                }}
+                className="w-100 p-0 m-0"
+                style={{ marginBottom: '24px', backgroundColor: 'rgba(56, 58, 64)', textIndent: '0', borderRadius: '8px' }}
             >
                 <div
                     className="overflow-x-hidden overflow-y-scroll"
-                    style={{
-                        maxHeight: '50vh',
-                        borderRadius: '8px',
-                        backfaceVisibility: 'hidden',
-                        scrollbarWidth: 'none'
-                    }}
+                    style={{ borderRadius: '8px', backfaceVisibility: 'hidden', scrollbarWidth: 'none' }}
                 >
-                    <div className="d-flex position-relative" style={{ paddingLeft: '16px' }}>
+                    <div className="d-flex position-relative">
                                     <span className="position-sticky" style={{ flex: '0 0 auto', alignSelf: 'stretch' }}>
                                         <Icon
                                             icon="bi:plus-circle-fill"

@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import PrivateMessageHomepage from "./components/child_components/private_message_homepage/Private_Message_Homepage";
-import PrivateMessageChatpage from "./components/child_components/private_message_chatpage/Private_Message_Chatpage";
+import PrivateMessageHomepage from "./components/private_message_homepage/Private_Message_Homepage";
+import PrivateMessageChatpage from "./components/private_message_chatpage/Private_Message_Chatpage";
 import socket from "./components/utils/actions/authActions";
 
 function App() {

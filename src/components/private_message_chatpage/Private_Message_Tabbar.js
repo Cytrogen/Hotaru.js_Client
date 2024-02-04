@@ -8,8 +8,8 @@ const PrivateMessageTabbar = () => {
         <>
             <div className="d-flex flex-row align-items-stretch align-items-center justify-content-between w-100" style={{ minHeight: '32px' }}>
                 <div className="d-flex flex-row align-items-center">
-                    <img src={ imgURL } className="ms-3 me-3" style={{ width: '24px', height: '24px' }}></img>
-                    <span className="me-3 text-white">Dummy</span>
+                    <img src={ imgURL } className="ms-3 me-3 rounded-circle" style={{ width: '24px', height: '24px' }} alt=""></img>
+                    <span className="me-3 text-white fw-bolder">Dummy</span>
                 </div>
                 <div className="d-flex flex-row align-items-center gap-3 me-2">
                     <Icon icon="material-symbols:phone-in-talk-watchface-indicator" className="tabbar_logo" />
