@@ -1,6 +1,6 @@
 import socketIO from "socket.io-client";
+
 const socket = socketIO.connect("http://localhost:4000");
-export default socket;
 
 /**
  * Register a new user.
@@ -8,7 +8,7 @@ export default socket;
  * @param navigate
  * @returns {(function(*): void)|*}
  */
-export const registerUser = (userData, navigate) => dispatch => {
+const registerUser = (userData, navigate) => dispatch => {
     // Emit the register event to the server with the user data.
     socket.emit('register', userData);
 
@@ -23,9 +23,10 @@ export const registerUser = (userData, navigate) => dispatch => {
 /**
  * Login a user.
  * @param userData
+ * @param dispatch
  * @returns {(function(*): void)|*}
  */
-export const loginUser = userData => dispatch => {
+const loginUser = (userData, dispatch) => {
     // Emit the login event to the server with the user data.
     socket.emit('login', userData);
 
@@ -45,7 +46,7 @@ export const loginUser = userData => dispatch => {
  * @param token
  * @returns {{payload, type: string}}
  */
-export const setCurrentUser = token => {
+const setCurrentUser = token => {
     return {
         type: 'SET_CURRENT_USER',
         payload: token
@@ -56,7 +57,10 @@ export const setCurrentUser = token => {
  * Logout a user.
  * @returns {(function(*): void)|*}
  */
-export const logoutUser = () => dispatch => {
+const logoutUser = dispatch => {
     localStorage.removeItem('jwtToken');
     dispatch(setCurrentUser({}));
 };
+
+export default socket;
+export { registerUser, loginUser, setCurrentUser, logoutUser };
