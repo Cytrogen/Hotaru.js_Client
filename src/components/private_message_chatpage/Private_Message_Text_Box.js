@@ -7,18 +7,27 @@ import socket from "../utils/actions/authActions";
 const PrivateMessageTextBox = () => {
     const [message, setMessage] = useState("");
 
-    const handleSendMessage = e => {
-        e.preventDefault();
+    const handleKeyDown = e => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            handleSendMessage();
+        }
+    }
 
+    const handleChange = e => {
+        setMessage(e.target.value);
+    }
+
+    const handleSendMessage = () => {
         // Send the message to the server.
-        if (message.trim() && localStorage.getItem("username")) {
+        // if (message.trim() && localStorage.getItem("username")) {
             socket.emit("privateMessageSent", {
                 id: `${ socket.id }${ Math.random() }`,
                 socketID: socket.id,
-                name: localStorage.getItem("username"),
+                // name: localStorage.getItem("username"),
                 text: message
             });
-        }
+        // }
         // Clear the message input.
         setMessage("");
     }
@@ -54,11 +63,12 @@ const PrivateMessageTextBox = () => {
                             }}
                         >
                             <textarea
-                                autoCapitalize="none" autoComplete="off" autoCorrect="off" autoFocus="true"
+                                autoCapitalize="none" autoComplete="off" autoCorrect="off" autoFocus={ true }
                                 placeholder="Text @dummy" spellCheck="true"
                                 className="position-absolute overflow-hidden"
                                 value={ message }
-                                onChange={ e => setMessage(e.target.value) }
+                                onChange={ handleChange }
+                                onKeyDown={ handleKeyDown }
                                 style={{
                                     border: 'none', outline: 'none', resize: 'none',
                                     paddingBottom: '11px', paddingTop: '11px', paddingRight: '10px',
