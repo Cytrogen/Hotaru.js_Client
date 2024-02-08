@@ -8,7 +8,7 @@ const socket = socketIO.connect("http://localhost:4000");
  * @param navigate
  * @returns {(function(*): void)|*}
  */
-const registerUser = (userData, navigate) => dispatch => {
+const registerUser = (userData, navigate) => {
     // Emit the register event to the server with the user data.
     socket.emit('register', userData);
 
