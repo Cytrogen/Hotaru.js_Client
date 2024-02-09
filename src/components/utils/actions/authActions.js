@@ -13,10 +13,9 @@ const registerUser = (userData, navigate) => {
     socket.emit("register", userData);
 
     // Listen for the newRegisteredUser event from the server.
-    socket.on("newRegisteredUser", (data) => {
+    socket.on("newRegisteredUser", data => {
         // If the registration was successful, redirect the user to the login page.
-        if (data.status === 200)
-            navigate("/login");
+        data.status === "00000" ? navigate("/login") : console.log(data.message);
     });
 };
 
@@ -31,12 +30,12 @@ const loginUser = (userData, dispatch) => {
     socket.emit("login", userData);
 
     socket.on("loggedInUser", (data) => {
-        // console.log("data: ", data);
-        if (data.status === 200) {
+        if (data.status === "00000") {
             const { token } = data;
             localStorage.setItem("jwtToken", token);
             dispatch(setCurrentUser(token));
-            // console.log("token: ", token);
+        } else {
+            console.log(data.message);
         }
     });
 };
