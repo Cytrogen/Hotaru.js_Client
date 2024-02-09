@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Card, CardBody, CardSubtitle, CardTitle, CardText, Container, Row, Col, Form, FormGroup, Input, Button, Label } from "reactstrap";
 
-import './style.css';
-import { loginUser } from './utils/actions/authActions';
+import "./style.css";
+import { loginUser } from "./utils/actions/authActions";
 
 const Login = () => {
     const dispatch = useDispatch();
-    const [userData, setUserData] = useState({ username: "", password: "" });
     const [readOnly, setReadOnly] = useState(true);
+    const [userData, setUserData] = useState({ username: "", password: "" });
 
     /**
      * Handle changes to the username input.
@@ -27,7 +27,7 @@ const Login = () => {
      */
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(loginUser(userData));
+        dispatch(loginUser(userData, dispatch));
     };
 
     return (
