@@ -15,7 +15,7 @@ const FriendsListSidebar = () => {
     return (
         <div className="d-flex flex-column" style={{ width: '240px', height: "100vh", backgroundColor: 'rgba(43, 45, 49)' }}>
             <div className="mb-3">
-                <a href="/channels/@me" className="d-flex flex-row rounded-1" style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none', padding: '18px 8px 4px 8px' }}>
+                <a href="/channels/@me" className="d-flex flex-row rounded-1 px-3 pt-4" style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none' }}>
                     <Icon icon="game-icons:three-friends" style={{ color: 'rgba(148, 155, 164)', fontSize: '28px' }} />
                     <span className="mx-3">Friends</span>
                 </a>
@@ -27,13 +27,13 @@ const FriendsListSidebar = () => {
 
             <div className="d-flex flex-row flex-grow-1">
                 <div
-                    className="rounded-1"
+                    className="rounded-1 w-100 mx-2"
                     onMouseEnter={ () => updateHoverState('online', true) }
                     onMouseLeave={ () => updateHoverState('online', false) }
-                    style={{ width: '100%', backgroundColor: hoverStates['online'] ? 'rgba(53, 55, 60)' : 'rgba(43, 45, 49)' }}
+                    style={{ height: '50px', backgroundColor: hoverStates['online'] ? 'rgba(53, 55, 60)' : 'rgba(43, 45, 49)' }}
                 >
-                    <a style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none' }} href="/channels/@me/dummy">
-                        <div className="m-2">
+                    <a href="/channels/@me/dummy" style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none' }}>
+                        <div className="mx-2 my-2">
                             <img className="rounded-circle" style={{ width: '32px', height: '32px', marginRight: '12px' }} src={ dummyAvatarURL } alt="" />
                             <span className="fw-bolder">Dummy</span>
                         </div>
