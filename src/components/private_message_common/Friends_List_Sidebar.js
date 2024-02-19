@@ -14,15 +14,22 @@ const FriendsListSidebar = () => {
 
     return (
         <div className="d-flex flex-column" style={{ width: '240px', height: "100vh", backgroundColor: 'rgba(43, 45, 49)' }}>
-            <div className="mb-3">
-                <a href="/channels/@me" className="d-flex flex-row rounded-1 px-3 pt-4" style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none' }}>
-                    <Icon icon="game-icons:three-friends" style={{ color: 'rgba(148, 155, 164)', fontSize: '28px' }} />
-                    <span className="mx-3">Friends</span>
-                </a>
+            <div className="mb-3 mt-4 d-flex flex-column">
+                {/* TODO: add hover state */}
+                <div
+                    className="rounded-1 w-100 mx-2"
+                >
+                    <a href="/channels/@me" className="d-flex flex-row m-2 "
+                       style={{color: 'rgba(128, 133, 142)', textDecoration: 'none'}}>
+                        <Icon icon="game-icons:three-friends" style={{ color: 'rgba(148, 155, 164)', fontSize: '28px', marginRight: '12px' }}/>
+                        <span>Friends</span>
+                    </a>
+                </div>
             </div>
 
             <div>
-                <h2 style={{ fontSize: '12px', padding: '18px 8px 4px 18px', color: 'rgba(128, 133, 142)' }}>Private Messages</h2>
+                <h2 style={{fontSize: '12px', padding: '18px 8px 4px 18px', color: 'rgba(128, 133, 142)'}}>Private
+                    Messages</h2>
             </div>
 
             <div className="d-flex flex-row flex-grow-1">
@@ -33,7 +40,7 @@ const FriendsListSidebar = () => {
                     style={{ height: '50px', backgroundColor: hoverStates['online'] ? 'rgba(53, 55, 60)' : 'rgba(43, 45, 49)' }}
                 >
                     <a href="/channels/@me/dummy" style={{ color: 'rgba(128, 133, 142)', textDecoration: 'none' }}>
-                        <div className="mx-2 my-2">
+                        <div className="m-2">
                             <img className="rounded-circle" style={{ width: '32px', height: '32px', marginRight: '12px' }} src={ dummyAvatarURL } alt="" />
                             <span className="fw-bolder">Dummy</span>
                         </div>
@@ -49,6 +56,7 @@ const FriendsListSidebar = () => {
                 }}
             >
                 <span className="d-flex flex-row align-items-center" style={{ marginLeft: '-2px', minWidth: '120px', paddingLeft: '2px' }}>
+                    {/* TODO: add hover states */}
                     <img
                         className="rounded-circle flex-shrink-0"
                         style={{ width: '32px', height: '32px', borderRadius: '50%' }}

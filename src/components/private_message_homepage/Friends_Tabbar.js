@@ -57,6 +57,7 @@ const FriendsTabbar = () => {
             </div>
 
             <div className="float-end">
+                {/* TODO: add hover states */}
                 <div className="d-flex flex-row align-items-center me-2 mt-1 gap-3">
                     <Icon icon="mdi:chat-plus" className="tabbar_logo" style={{ fontSize: '28px' }} />
                     <span style={{ width: '1px', height: '24px', backgroundColor: 'rgba(63, 65, 71)' }}/>

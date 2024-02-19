@@ -16,6 +16,7 @@ const ActiveFriendsList = () => {
 
     return (
         <div className="d-flex flex-column" style={{ height: '100vh', flex: '1 1 auto', borderRight: 'solid 3px rgba(63, 65, 71)' }}>
+            {/* TODO: make search function */}
             <div className="rounded-2 mt-3 ms-3 me-4 px-3 py-2" style={{ color: 'rgba(148, 155, 164)', backgroundColor: 'rgba(30, 31, 34)', fontSize: '16px' }}>
                 Search
                 <Icon icon="mingcute:search-2-line" className="float-end text-white fs-4"/>
@@ -25,6 +26,7 @@ const ActiveFriendsList = () => {
 
             <div className="d-flex flex-column mt-2">
                 <div className="ms-4 me-5">
+                    {/* TODO: improve hover state */}
                     <div
                         className="ps-3 rounded-3"
                         onClick={ () => navigate("/channels/@me/dummy") }
@@ -43,6 +45,7 @@ const ActiveFriendsList = () => {
 
 
                             <div className="d-flex flex-row mt-1 me-3">
+                                {/* TODO: remake the circle */}
                                 <span className="rounded-circle px-2 py-1" style={{ backgroundColor: 'rgba(41, 43, 46)' }}>
                                     <Icon icon="tabler:message-circle-2-filled" className="tabbar_logo" />
                                 </span>
