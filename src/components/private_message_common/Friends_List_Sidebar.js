@@ -1,12 +1,14 @@
 import { useState } from "react";
 
 import { Icon } from "@iconify/react";
+import { useSelector } from "react-redux";
 
 import dummyAvatarURL from "../static/avatar.png";
 import userDefaultAvatarURL from "../static/Hotaru_default_avatar.png";
 
 const FriendsListSidebar = () => {
     const [hoverStates, setHoverStates] = useState({});
+    const currentUser = useSelector(state => state.auth.user);
 
     const updateHoverState = (item, isHovered) => {
         setHoverStates(prev => ({ ...prev, [item]: isHovered }));
@@ -48,6 +50,7 @@ const FriendsListSidebar = () => {
                 </div>
             </div>
 
+            {/* User panel */}
             <div
                 className="d-flex flex-row align-items-center"
                 style={{
@@ -73,7 +76,7 @@ const FriendsListSidebar = () => {
                                 whiteSpace: 'nowrap', textOverflow: 'ellipsis', color: 'rgba(242, 243, 245)'
                             }}
                         >
-                            You
+                            { currentUser.username }
                         </span>
                         <span
                             className="overflow-hidden"

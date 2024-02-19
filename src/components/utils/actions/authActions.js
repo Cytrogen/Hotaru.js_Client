@@ -1,5 +1,5 @@
 import socketIO from "socket.io-client";
-import { createAction } from "@reduxjs/toolkit";
+import { setCurrentUser } from "../reducers/authSlice";
 
 const socket = socketIO.connect("http://localhost:4000");
 
@@ -33,11 +33,12 @@ const loginUser = (userData, navigate) => {
         // Emit the login event to the server with the user data.
         socket.emit("login", userData);
 
-        socket.on("loggedInUser", (data) => {
+        socket.on("loggedInUser", data => {
             if (data.status === "00000") {
                 const { token } = data;
                 localStorage.setItem("jwtToken", token);
-                dispatch(setCurrentUser(token));
+                userData["token"] = token;
+                dispatch(setCurrentUser(userData));
                 navigate("/channels/@me");
             } else {
                 console.log(data.message);
@@ -45,17 +46,6 @@ const loginUser = (userData, navigate) => {
         });
     }
 };
-
-/**
- * Set the current user.
- * @param token
- * @returns {{payload, type: string}}
- */
-const setCurrentUser = createAction("SET_CURRENT_USER", token => {
-    return {
-        payload: token
-    }
-});
 
 /**
  * Logout a user.

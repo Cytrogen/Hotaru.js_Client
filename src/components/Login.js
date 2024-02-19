@@ -30,7 +30,7 @@ const Login = () => {
      */
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(loginUser(userData, navigate, dispatch));
+        dispatch(loginUser(userData, navigate));
     };
 
     return (
