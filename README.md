@@ -1,10 +1,10 @@
 # Hotaru_JS Client
 
+> 该项目已停止更新！！！新项目地址：[Hotaru.TS](https://github.com/Cytrogen/Hotaru.TS)。
+
 这是Hotaru_JS的客户端代码。
 
 技术栈使用了React和Socket.io作为通信。
-
-
 
 ## Docker
 
